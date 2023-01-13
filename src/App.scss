@@ -24,6 +24,8 @@
 }
 
 .App {
+  user-select: none;
+
   h2 {
     @include font('Asap-Bold', #7b7b7b, 3.5vw, uppercase, left);
     letter-spacing: 0.2vw;
@@ -41,6 +43,8 @@
     background: none;
     border: solid 0.1vw #7b7b7b;
     padding: 1vw 3vw;
+
+    cursor: pointer;
   }
 
   button:hover {

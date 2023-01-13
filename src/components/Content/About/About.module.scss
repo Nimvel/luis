@@ -25,6 +25,7 @@
 
 .about {
     @include font('Asap_Regular', #4a4a4a, 1.3vw, none, left);
+    margin-bottom: 10vw;
 
     display: grid;
     grid-template-columns: 1fr 1fr;

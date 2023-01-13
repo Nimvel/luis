@@ -1,0 +1,91 @@
+@mixin dimensions($width, $height) {
+    width: $width;
+    height: $height;
+}
+
+@mixin possitionTopLeft($position, $top, $left) {
+    position: $position;
+    top: $top;
+    left: $left;
+}
+
+@mixin image($url, $position, $size) {
+    background: url($url) no-repeat;
+    background-position: $position;
+    background-size: $size;
+}
+
+@mixin font($family, $color, $size, $transform, $align) {
+    font-family: $family;
+    color: $color;
+    font-size: $size;
+    text-transform: $transform;
+    text-align: $align;
+}
+
+.services {
+    @include possitionTopLeft(relative, 0, 0);
+
+    @include font('Asap_Medium', #7b7b7b, 2vw, none, center);
+    font-weight: bold;
+
+    height: 40vw;
+
+    h2 {
+        @include possitionTopLeft(relative, 1vw, 50%);
+        transform: translate(-50%);
+        @include dimensions(16vw, 4vw);
+        margin-bottom: 5vw;
+    }
+
+    h2:before {
+        content: '';
+        @include possitionTopLeft(absolute, -1vw, 50%);
+        transform: translate(-50%);
+        @include dimensions(5vw, 1vw);
+        border-top: #7b7b7b solid 0.3vw;
+    }
+
+    p {
+        margin-top: 1vw;
+        margin-bottom: 3.5vw;
+        width: 18vw;
+        @include possitionTopLeft(relative, 0, 50%);
+        transform: translate(-50%);
+    }
+}
+
+.columns {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+}
+
+.img {
+    @include possitionTopLeft(relative, 0, 50%);
+    transform: translate(-50%);
+    @include dimensions(6vw, 5.5vw);
+}
+
+.user_research {
+    @include image('../../../assets/images/user_research.png', center, 90%);
+}
+
+.ia_and_wireframes {
+    @include image('../../../assets/images/ia_and_wireframes.png', center, 90%);
+}
+
+.user_testing {
+    @include image('../../../assets/images/user_testing.png', center, 80%);
+}
+
+.ui {
+    @include image('../../../assets/images/ui.png', center, 95%);
+}
+
+.delivery {
+    @include image('../../../assets/images/delivery.png', center, 65%);
+}
+
+.support {
+    @include image('../../../assets/images/support.png', center, 90%);
+}
