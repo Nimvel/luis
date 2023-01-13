@@ -1,0 +1,113 @@
+@mixin dimensions($width, $height) {
+    width: $width;
+    height: $height;
+}
+
+@mixin possitionTopLeft($position, $top, $left) {
+    position: $position;
+    top: $top;
+    left: $left;
+}
+
+@mixin image($url, $position, $size) {
+    background: url($url) no-repeat;
+    background-position: $position;
+    background-size: $size;
+}
+
+@mixin font($family, $color, $size, $transform, $align) {
+    font-family: $family;
+    color: $color;
+    font-size: $size;
+    text-transform: $transform;
+    text-align: $align;
+}
+
+.header_block {
+    @include dimensions(100vw, 55vw);
+    background-color: #e7e7e7;
+
+    .header {
+        @include dimensions(85vw, 5vw);
+        @include possitionTopLeft(relative, 2vw, 50vw);
+        transform: translate(-50%);
+
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+
+        z-index: 2;
+    }
+}
+
+.logo {
+    @include dimensions(5vw, 5vw);
+    @include font('Lato-Light', #4a4a4a, 1vw, uppercase, center);
+    font-weight: bold;
+    display: grid;
+
+    .ball {
+        @include image('../../assets/images/ball.png', center, 100%);
+        @include possitionTopLeft(relative, 0, 50%);
+        transform: translate(-50%);
+        @include dimensions(2vw, 2vw);
+    }
+
+    span {
+        @include font('Lato-Regular', #4a4a4a, 0.5vw, uppercase, center);
+    }
+}
+
+.navbar {
+    @include dimensions(45vw, 2vw);
+
+    @include possitionTopLeft(relative, 1vw, null);
+    right: 0;
+
+    @include font('Asap-Regular', #676767, 1.3vw, uppercase, right);
+    font-weight: 600;
+    font-stretch: ultra-expanded;
+
+    display: grid;
+    grid-template-columns: 3.7vw 4vw 4.8vw 6.7vw 5.5vw;
+    justify-content: right;
+    gap: 3vw;
+
+    span {
+        @include dimensions(auto, 1.5vw);
+    }
+
+    span:hover {
+        cursor: pointer;
+        text-transform: none;
+        text-decoration: underline;
+        text-align: center;
+    }
+}
+
+.block {
+    @include dimensions(40vw, 20vw);
+    @include possitionTopLeft(relative, 11vw, 0);
+    @include font('Asap-Medium', #969696, 1.3vw, none, left);
+    font-weight: bold;
+    letter-spacing: 0.1vw;
+
+    h1 {
+        font-size: 6vw;
+        color: #4d4d4d;
+        margin: 0;
+        margin-bottom: 0.5vw;
+    }
+
+    .buttons_block {
+        @include dimensions(28vw, 4vw);
+        margin-top: 2vw;
+        display: flex;
+        gap: 2vw;
+    }
+}
+
+.background {
+    @include image('../../assets/images/background.png', 0 0, 100%);
+    @include possitionTopLeft(absolute, 7vw, 20vw);
+    @include dimensions(75vw, 48vw);
+}
