@@ -1,4 +1,4 @@
-import AboutMe from './AboutMe/AboutMe'
+import AboutMe from './About/About'
 import s from './Content.module.scss'
 import MySkills from './MySkills/MySkills'
 import Portfolio from './Portfolio/Portfolio'

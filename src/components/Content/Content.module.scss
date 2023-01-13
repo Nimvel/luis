@@ -1,0 +1,16 @@
+@mixin dimensions($width, $height) {
+    width: $width;
+    height: $height;
+}
+
+@mixin possitionTopLeft($position, $top, $left) {
+    position: $position;
+    top: $top;
+    left: $left;
+}
+
+.content {
+    @include dimensions(85vw, 155vw);
+    @include possitionTopLeft(relative, 8vw, 50vw);
+    transform: translate(-50%);
+}

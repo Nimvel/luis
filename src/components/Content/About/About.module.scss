@@ -1,0 +1,59 @@
+@mixin dimensions($width, $height) {
+    width: $width;
+    height: $height;
+}
+
+@mixin possitionTopLeft($position, $top, $left) {
+    position: $position;
+    top: $top;
+    left: $left;
+}
+
+@mixin image($url, $position, $size) {
+    background: url($url) no-repeat;
+    background-position: $position;
+    background-size: $size;
+}
+
+@mixin font($family, $color, $size, $transform, $align) {
+    font-family: $family;
+    color: $color;
+    font-size: $size;
+    text-transform: $transform;
+    text-align: $align;
+}
+
+.about {
+    @include font('Asap_Regular', #4a4a4a, 1.3vw, none, left);
+
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1vw;
+
+    p {
+        line-height: 1.4;
+        margin-bottom: 2vw;
+    }
+
+    .column_1 {
+        @include possitionTopLeft(relative, 4vw, 0);
+        @include dimensions(36vw, 20vw);
+
+        h2 {
+            width: 30vw;
+        }
+    }
+
+    .column_1:before {
+        content: '';
+        @include possitionTopLeft(absolute, -1vw, 0);
+        @include dimensions(5vw, 1vw);
+        border-top: #7b7b7b solid 0.3vw;
+    }
+}
+
+.img_1 {
+    @include image('../../../assets/images/img_1.png', 20%, 120%);
+
+    @include dimensions(42vw, 33vw);
+}
