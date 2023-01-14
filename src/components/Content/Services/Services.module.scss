@@ -26,30 +26,19 @@
 .services {
     @include possitionTopLeft(relative, 0, 0);
 
-    @include font('Asap_Medium', #7b7b7b, 2vw, none, center);
+    @include font('Asap-Medium', #494949, 1.7vw, none, center);
     font-weight: bold;
 
     height: 40vw;
 
-    h2 {
-        @include possitionTopLeft(relative, 1vw, 50%);
-        transform: translate(-50%);
+    h3 {
         @include dimensions(16vw, 4vw);
-        margin-bottom: 5vw;
-    }
-
-    h2:before {
-        content: '';
-        @include possitionTopLeft(absolute, -1vw, 50%);
-        transform: translate(-50%);
-        @include dimensions(5vw, 1vw);
-        border-top: #7b7b7b solid 0.3vw;
     }
 
     p {
         margin-top: 1vw;
         margin-bottom: 3.5vw;
-        width: 18vw;
+        width: 15vw;
         @include possitionTopLeft(relative, 0, 50%);
         transform: translate(-50%);
     }

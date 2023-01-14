@@ -24,7 +24,7 @@
 }
 
 .about {
-    @include font('Asap_Regular', #4a4a4a, 1.3vw, none, left);
+    @include font('Asap-Regular', #4a4a4a, 1.3vw, none, left);
     margin-bottom: 10vw;
 
     display: grid;
@@ -43,13 +43,13 @@
         h2 {
             width: 30vw;
         }
-    }
 
-    .column_1:before {
-        content: '';
-        @include possitionTopLeft(absolute, -1vw, 0);
-        @include dimensions(5vw, 1vw);
-        border-top: #7b7b7b solid 0.3vw;
+        h2:before {
+            content: '';
+            @include possitionTopLeft(absolute, -1vw, 2.7vw);
+            @include dimensions(5vw, 1vw);
+            border-top: #7b7b7b solid 0.3vw;
+        }
     }
 }
 

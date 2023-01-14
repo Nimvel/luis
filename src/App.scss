@@ -26,12 +26,26 @@
 .App {
   user-select: none;
 
-  h2 {
+  h2, h3 {
     @include font('Asap-Bold', #7b7b7b, 3.5vw, uppercase, left);
-    letter-spacing: 0.2vw;
+    letter-spacing: 0.3vw;
   }
 
-  h2, p, span {
+  h3 {
+    @include possitionTopLeft(relative, 1vw, 50%);
+    transform: translate(-50%);
+    margin-bottom: 5vw;
+}
+
+h3:before {
+    content: '';
+    @include possitionTopLeft(absolute, -1vw, 50%);
+    transform: translate(-50%);
+    @include dimensions(5vw, 1vw);
+    border-top: #7b7b7b solid 0.3vw;
+}
+
+  h2, h3, h4, h5, h6, p, span {
     margin: 0;
   }
 

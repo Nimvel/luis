@@ -1,0 +1,120 @@
+@mixin dimensions($width, $height) {
+    width: $width;
+    height: $height;
+}
+
+@mixin possitionTopLeft($position, $top, $left) {
+    position: $position;
+    top: $top;
+    left: $left;
+}
+
+@mixin image($url, $position, $size) {
+    background: url($url) no-repeat;
+    background-position: $position;
+    background-size: $size;
+}
+
+@mixin font($family, $color, $size, $transform, $align) {
+    font-family: $family;
+    color: $color;
+    font-size: $size;
+    text-transform: $transform;
+    text-align: $align;
+}
+
+.testimonials {
+    @include possitionTopLeft(relative, 0, 0);
+    height: 75vw;
+
+
+
+    h3 {
+        @include dimensions(26.5vw, 4vw);
+    }
+
+    h4,
+    h5 {
+        @include font('Asap-Medium', #3b3b3b, 3vw, uppercase, left);
+        font-weight: bold;
+    }
+
+    h5 {
+        @include possitionTopLeft(relative, 0, 50%);
+        transform: translate(-50%);
+        @include dimensions(5vw, 3vw);
+
+    }
+
+    h6 {
+        @include font('Asap-Regular', #3b3b3b, 1.5vw, uppercase, center);
+        @include possitionTopLeft(relative, 1vw, 50%);
+        transform: translate(-50%);
+    }
+}
+
+.block {
+    display: grid;
+    grid-template-columns: 10vw 35vw;
+    gap: 2vw;
+
+    @include possitionTopLeft(relative, 5vw, 50%);
+    transform: translate(-50%);
+    @include dimensions(50vw, 15vw);
+    border: #262626 solid 0.1vw;
+
+    padding: 3vw 5vw 5vw 7vw;
+
+    margin-bottom: 10vw;
+
+    .img_3 {
+        @include dimensions(10vw, 10vw);
+        @include image('../../../assets/images/img_3.png', center, 100%);
+    }
+
+    span {
+        @include font('Asap-Medium', #7b7b7b, 1vw, uppercase, left);
+
+    }
+
+    p {
+        @include font('Asap-Regular', #7b7b7b, 1.5vw, uppercase, left);
+
+    }
+}
+
+.statistics {
+    @include possitionTopLeft(relative, 1vw, 50%);
+    transform: translate(-50%);
+    @include dimensions(80vw, 13vw);
+
+    display: flex;
+    gap: 11vw;
+
+    .hands_to_work,
+    .happy_client,
+    .coffee,
+    .finished_project {
+        @include possitionTopLeft(relative, 0, 50%);
+        transform: translate(-50%);
+        @include dimensions(6vw, 6vw);
+
+    }
+
+    .hands_to_work {
+        @include image('../../../assets/images/hands_to_work.png', center, 100%);
+    }
+
+    .happy_client {
+        @include image('../../../assets/images/happy_client.png', center, 80%);
+    }
+
+    .finished_project {
+        @include image('../../../assets/images/finished_project.png', center, 70%);
+    }
+
+    .coffee {
+        @include image('../../../assets/images/coffee.png', center, 80%);
+    }
+
+}

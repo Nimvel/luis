@@ -1,6 +1,6 @@
 import AboutMe from './About/About'
 import s from './Content.module.scss'
-import MySkills from './MySkills/MySkills'
+import Skills from './Skills/Skills'
 import Portfolio from './Portfolio/Portfolio'
 import SayHello from './SayHello/SayHello'
 import Services from './Services/Services'
@@ -11,7 +11,7 @@ const Content = () => {
         <div className={s.content}>
             <AboutMe />
             <Services />
-            <MySkills />
+            <Skills />
             <Portfolio />
             <Testimonials />
             <SayHello />

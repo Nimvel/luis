@@ -10,7 +10,7 @@
 }
 
 .content {
-    @include dimensions(85vw, 155vw);
+    @include dimensions(85vw, 255vw);
     @include possitionTopLeft(relative, 8vw, 50vw);
     transform: translate(-50%);
 }

@@ -1,0 +1,122 @@
+@mixin dimensions($width, $height) {
+    width: $width;
+    height: $height;
+}
+
+@mixin possitionTopLeft($position, $top, $left) {
+    position: $position;
+    top: $top;
+    left: $left;
+}
+
+@mixin image($url, $position, $size) {
+    background: url($url) no-repeat;
+    background-position: $position;
+    background-size: $size;
+}
+
+@mixin font($family, $color, $size, $transform, $align) {
+    font-family: $family;
+    color: $color;
+    font-size: $size;
+    text-transform: $transform;
+    text-align: $align;
+}
+
+.skills {
+    @include possitionTopLeft(relative, 0, 0);
+
+    height: 55vw;
+
+    h3 {
+        @include dimensions(18.5vw, 4vw);
+    }
+
+}
+
+.skill_chart {
+    margin-top: 4vw;
+    display: grid;
+    height: 26vw;
+    grid-template-columns: 10vw 70vw;
+
+    .percents {
+        display: grid;
+        gap: 2vw;
+        margin-bottom: 1vw;
+
+        span {
+            @include font('Asap-Regular', #494949, 1.1vw, none, left);
+            font-weight: bold;
+            @include possitionTopLeft(relative, 0, 7vw);
+        }
+
+        span:before {
+            content: '';
+            @include dimensions(75vw, 1vw);
+            border-bottom: #e2e2e2 solid 0.1vw;
+            @include possitionTopLeft(absolute, -0.3vw, 3vw)
+        }
+    }
+
+    .point {
+        @include dimensions(0.9vw, 0.9vw);
+        background-color: black;
+        border-radius: 50%;
+        z-index: 20;
+    }
+
+    .point_1 {
+        @include possitionTopLeft(absolute, 16.6vw, 19.2vw);
+    }
+
+    .point_2 {
+        @include possitionTopLeft(absolute, 20.8vw, 34.5vw);
+    }
+
+    .point_3 {
+        @include possitionTopLeft(absolute, 10.5vw, 50.1vw);
+    }
+
+    .point_4 {
+        @include possitionTopLeft(absolute, 16.5vw, 64vw);
+    }
+}
+
+.chart {
+    @include possitionTopLeft(absolute, 9vw, 10vw);
+    @include dimensions(70vw, 25vw);
+    @include image('../../../assets/images/chart.png', center, 100%);
+}
+
+.icons {
+    @include dimensions(49vw, 2vw);
+    @include possitionTopLeft(relative, 0, 50%);
+    transform: translate(-50%);
+
+    display: flex;
+    gap: 13.5vw;
+
+    .xd,
+    .ai,
+    .ps,
+    .ae {
+        @include dimensions(2vw, 2vw);
+    }
+
+    .xd {
+        @include image('../../../assets/images/xd.png', center, 100%);
+    }
+
+    .ae {
+        @include image('../../../assets/images/ae.png', center, 100%);
+    }
+
+    .ps {
+        @include image('../../../assets/images/ps.png', center, 100%);
+    }
+
+    .ai {
+        @include image('../../../assets/images/ai.png', center, 100%);
+    }
+}

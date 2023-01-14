@@ -1,0 +1,79 @@
+@mixin dimensions($width, $height) {
+    width: $width;
+    height: $height;
+}
+
+@mixin possitionTopLeft($position, $top, $left) {
+    position: $position;
+    top: $top;
+    left: $left;
+}
+
+@mixin image($url, $position, $size) {
+    background: url($url) no-repeat;
+    background-position: $position;
+    background-size: $size;
+}
+
+@mixin font($family, $color, $size, $transform, $align) {
+    font-family: $family;
+    color: $color;
+    font-size: $size;
+    text-transform: $transform;
+    text-align: $align;
+}
+
+.portfolio {
+    @include possitionTopLeft(relative, 0, 0);
+    height: 80vw;
+
+    h3 {
+        @include dimensions(20.5vw, 4vw);
+    }
+
+    button {
+        @include possitionTopLeft(relative, 5vw, 50%);
+        transform: translate(-50%);
+    }
+}
+
+.images {
+    @include possitionTopLeft(relative, 3vw, 0);
+
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2vw;
+
+    .img_2_1,
+    .img_2_2,
+    .img_2_3,
+    .img_2_4,
+    .img_2_5,
+    .img_2_6 {
+        @include dimensions(27vw, 24vw);
+    }
+
+    .img_2_1 {
+        @include image('../../../assets/images/img_2_1.png', center, 150%);
+    }
+
+    .img_2_2 {
+        @include image('../../../assets/images/img_2_2.png', 45% 30%, 125%);
+    }
+
+    .img_2_3 {
+        @include image('../../../assets/images/img_2_3.png', center, 125%);
+    }
+
+    .img_2_4 {
+        @include image('../../../assets/images/img_2_4.png', center, 125%);
+    }
+
+    .img_2_5 {
+        @include image('../../../assets/images/img_2_5.png', center, 125%);
+    }
+
+    .img_2_6 {
+        @include image('../../../assets/images/img_2_6.png', 35%, 115%);
+    }
+}

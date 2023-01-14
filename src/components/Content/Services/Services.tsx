@@ -4,7 +4,7 @@ import s from './Services.module.scss'
 const Services = () => {
     return (
         <div className={s.services}>
-            <h2>services</h2>
+            <h3>services</h3>
             <div className={s.columns}>
             <div>
                 <div className={`${s.img} ${s.user_research}`} />
