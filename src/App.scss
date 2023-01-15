@@ -26,29 +26,36 @@
 .App {
   user-select: none;
 
-  h2, h3 {
+  h2,
+  h3 {
     @include font('Asap-Bold', #7b7b7b, 3.5vw, uppercase, left);
-    letter-spacing: 0.3vw;
+    letter-spacing: 0.5vw;
   }
 
   h3 {
     @include possitionTopLeft(relative, 1vw, 50%);
+    text-align: center;
     transform: translate(-50%);
     margin-bottom: 5vw;
-}
+  }
 
-h3:before {
+  h3:before {
     content: '';
     @include possitionTopLeft(absolute, -1vw, 50%);
     transform: translate(-50%);
     @include dimensions(5vw, 1vw);
     border-top: #7b7b7b solid 0.3vw;
-}
-
-  h2, h3, h4, h5, h6, p, span {
-    margin: 0;
   }
 
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  p,
+  span {
+    margin: 0;
+  }
 
   button {
     @include font('Asap-Medium', #7b7b7b, 1.2vw, uppercase, center);
@@ -66,35 +73,35 @@ h3:before {
     border-color: white;
     box-shadow: 0 1vw 1vw #d3d3d3;
   }
- 
+
 }
 
 @font-face {
   /* Lato-Light */
-  font-family: "Lato-Light"; 
+  font-family: "Lato-Light";
   src: url("./assets/fonts/Lato/Lato-Light.ttf") format("truetype");
-  } 
+}
 
 @font-face {
   /* Lato-Regular */
-  font-family: "Lato-Regular"; 
+  font-family: "Lato-Regular";
   src: url("./assets/fonts/Lato/Lato-Regular.ttf") format("truetype");
-  } 
+}
 
 @font-face {
   /* Asap-Regular */
-  font-family: "Asap-Regular"; 
+  font-family: "Asap-Regular";
   src: url("./assets/fonts/Asap/static/Asap/Asap-Regular.ttf") format("truetype");
-  } 
+}
 
 @font-face {
   /* Asap-Medium */
-  font-family: "Asap-Medium"; 
+  font-family: "Asap-Medium";
   src: url("./assets/fonts/Asap/static/Asap/Asap-Medium.ttf") format("truetype");
-  } 
+}
 
 @font-face {
   /* Asap-Bold*/
-  font-family: "Asap-Bold"; 
+  font-family: "Asap-Bold";
   src: url("./assets/fonts/Asap/static/Asap/Asap-Bold.ttf") format("truetype");
-  } 
+}

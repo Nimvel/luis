@@ -1,0 +1,89 @@
+@mixin dimensions($width, $height) {
+    width: $width;
+    height: $height;
+}
+
+@mixin possitionTopLeft($position, $top, $left) {
+    position: $position;
+    top: $top;
+    left: $left;
+}
+
+@mixin image($url, $position, $size) {
+    background: url($url) no-repeat;
+    background-position: $position;
+    background-size: $size;
+}
+
+@mixin font($family, $color, $size, $transform, $align) {
+    font-family: $family;
+    color: $color;
+    font-size: $size;
+    text-transform: $transform;
+    text-align: $align;
+}
+
+.footer {
+    @include dimensions(100vw, 55vw);
+    @include possitionTopLeft(relative, 0, 0);
+
+    padding-top: 7vw;
+    @include font('Asap-Regular', white, 1.3vw, none, center);
+
+
+    h3 {
+        color: white;
+    }
+}
+
+.background {
+    @include image('../../assets/images/footer_background.png', center, cover);
+    @include possitionTopLeft(absolute, 0, 0);
+    @include dimensions(100vw, 55vw);
+    z-index: -1;
+}
+
+.form {
+    @include possitionTopLeft(relative, 5vw, 50%);
+    transform: translate(-50%);
+    @include dimensions(49.5vw, 20vw);
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2vw;
+
+    .inputs {
+        display: flex;
+        gap: 2vw;
+
+        input {
+            @include dimensions(23vw, 3.5vw);
+        }
+    }
+
+    textarea {
+        @include dimensions(49vw, 10vw);
+
+    }
+
+    button {
+        @include possitionTopLeft(relative, 0, 50%);
+        transform: translate(-50%);
+        background-color: white;
+    }
+
+    button:hover {
+        box-shadow: none;
+    }
+}
+
+.form:before {
+    content: '';
+    @include dimensions(110vw, 1vw);
+    @include possitionTopLeft(absolute, 25vw, -30vw);
+    border-bottom: solid white 0.1vw;
+}
+
+.block {
+    @include dimensions(100vw, 5vw);
+    @include possitionTopLeft(relative, 15vw, 0vw);
+}

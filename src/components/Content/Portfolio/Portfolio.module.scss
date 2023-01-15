@@ -27,10 +27,6 @@
     @include possitionTopLeft(relative, 0, 0);
     height: 80vw;
 
-    h3 {
-        @include dimensions(20.5vw, 4vw);
-    }
-
     button {
         @include possitionTopLeft(relative, 5vw, 50%);
         transform: translate(-50%);

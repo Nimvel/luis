@@ -27,11 +27,6 @@
     @include possitionTopLeft(relative, 0, 0);
 
     height: 55vw;
-
-    h3 {
-        @include dimensions(18.5vw, 4vw);
-    }
-
 }
 
 .skill_chart {

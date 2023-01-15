@@ -27,59 +27,56 @@
     @include possitionTopLeft(relative, 0, 0);
     height: 75vw;
 
+    .squares {
+        @include dimensions(3vw, 1vw);
+        @include possitionTopLeft(relative, -13vw, 50%);
+        transform: translate(-50%);
 
+        display: flex;
+        gap: 0.3vw;
 
-    h3 {
-        @include dimensions(26.5vw, 4vw);
+        .square, .black_square {
+            @include dimensions(0.7vw, 0.7vw);
+            border: #262626 solid 0.1vw;
+        }
+
+        .black_square {
+            background-color: #262626;
+        }
     }
 
-    h4,
-    h5 {
-        @include font('Asap-Medium', #3b3b3b, 3vw, uppercase, left);
+    h4 {
+        @include font('Asap-Medium', #3b3b3b, 2vw, uppercase, left);
         font-weight: bold;
-    }
-
-    h5 {
-        @include possitionTopLeft(relative, 0, 50%);
-        transform: translate(-50%);
-        @include dimensions(5vw, 3vw);
-
-    }
-
-    h6 {
-        @include font('Asap-Regular', #3b3b3b, 1.5vw, uppercase, center);
-        @include possitionTopLeft(relative, 1vw, 50%);
-        transform: translate(-50%);
     }
 }
 
 .block {
     display: grid;
-    grid-template-columns: 10vw 35vw;
-    gap: 2vw;
+    grid-template-columns: 10vw 45vw;
+    gap: 3vw;
 
     @include possitionTopLeft(relative, 5vw, 50%);
     transform: translate(-50%);
-    @include dimensions(50vw, 15vw);
+    @include dimensions(55vw, 15vw);
     border: #262626 solid 0.1vw;
 
-    padding: 3vw 5vw 5vw 7vw;
+    padding: 5vw 6vw 3vw 9vw;
 
-    margin-bottom: 10vw;
+    margin-bottom: 15vw;
 
     .img_3 {
-        @include dimensions(10vw, 10vw);
+        @include dimensions(11vw, 11vw);
         @include image('../../../assets/images/img_3.png', center, 100%);
     }
 
     span {
         @include font('Asap-Medium', #7b7b7b, 1vw, uppercase, left);
-
     }
 
     p {
-        @include font('Asap-Regular', #7b7b7b, 1.5vw, uppercase, left);
-
+        margin-top: 1vw;
+        @include font('Asap-Regular', #7b7b7b, 1.2vw, uppercase, left);
     }
 }
 
@@ -89,7 +86,17 @@
     @include dimensions(80vw, 13vw);
 
     display: flex;
-    gap: 11vw;
+    gap: 11.5vw;
+
+    h4 {
+        margin: 1vw 0 0.5vw 0;
+        @include dimensions(auto, 2vw);
+        text-align: center;
+    }
+
+    h5 {
+        @include font('Asap-Regular', #3b3b3b, 1.5vw, uppercase, center);
+    }
 
     .hands_to_work,
     .happy_client,
@@ -97,7 +104,7 @@
     .finished_project {
         @include possitionTopLeft(relative, 0, 50%);
         transform: translate(-50%);
-        @include dimensions(6vw, 6vw);
+        @include dimensions(6.5vw, 6.5vw);
 
     }
 
@@ -110,7 +117,7 @@
     }
 
     .finished_project {
-        @include image('../../../assets/images/finished_project.png', center, 70%);
+        @include image('../../../assets/images/finished_project.png', 70%, 75%);
     }
 
     .coffee {

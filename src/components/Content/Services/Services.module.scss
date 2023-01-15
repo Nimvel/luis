@@ -29,11 +29,7 @@
     @include font('Asap-Medium', #494949, 1.7vw, none, center);
     font-weight: bold;
 
-    height: 40vw;
-
-    h3 {
-        @include dimensions(16vw, 4vw);
-    }
+    height: 45vw;
 
     p {
         margin-top: 1vw;
@@ -45,6 +41,7 @@
 }
 
 .columns {
+    @include possitionTopLeft(relative, 5vw, 0);
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
 }
